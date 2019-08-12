@@ -21,11 +21,9 @@ public class Login extends HttpServlet {
 		String password=request.getParameter("pass");
 
 		if (obj.login(email,password)) {
-
 			HttpSession session = request.getSession(true);
 			session.setAttribute("currentSessionUser", email);
 			response.sendRedirect("Welcome.jsp");
-
 		} else {
 			response.sendRedirect("Login.jsp");
 
